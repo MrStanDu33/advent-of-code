@@ -1,0 +1,34 @@
+{
+  "tags": {
+    "dictionaries": ["jsdoc"],
+    "allowUnknownTags": ["category"]
+  },
+  "source": {
+    "include": ["./", "README.md"],
+    "includePattern": ".js$"
+  },
+  "plugins": ["plugins/markdown", "node_modules/better-docs/category", "node_modules/better-docs/typedef-import"],
+  "opts": {
+    "encoding": "utf8",
+    "template": "node_modules/better-docs",
+    "destination": "docs/",
+    "readme": "README.md",
+    "recurse": true
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true,
+    "search": true,
+    "better-docs": {
+      "name": "Advent of Code challenge code documentation",
+      "title": "Advent of Code challenge code documentation",
+      "hideGenerator": true,
+      "navLinks": [
+        {
+          "label": "Github",
+          "href": "https://github.com/MrStanDu33/advent-of-code"
+        }
+      ]
+    }
+  }
+}

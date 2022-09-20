@@ -1,0 +1,43 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "Advent of Code challenge realized in Javascript",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "aoc",
+    "adventofcode",
+    "puzzles"
+  ],
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint '**/*.js' --ignore-path .gitignore",
+    "doc": "jsdoc -c jsdoc.json",
+    "make:year": "node ./bin/create-year/index.js",
+    "make:day": "node ./bin/create-day/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MrStanDu33/advent-of-code.git"
+  },
+  "author": "DANIELS-ROTH Stan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrStanDu33/advent-of-code/issues"
+  },
+  "homepage": "https://github.com/MrStanDu33/advent-of-code#readme",
+  "devDependencies": {
+    "better-docs": "^2.7.2",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jsdoc": "^3.6.10",
+    "link-module-alias": "^1.2.0",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "inquirer": "^9.1.2"
+  }
+}
