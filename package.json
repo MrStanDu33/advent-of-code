@@ -2,7 +2,6 @@
   "name": "advent-of-code",
   "version": "1.0.0",
   "description": "Advent of Code challenge realized in Javascript",
-  "main": "index.js",
   "type": "module",
   "keywords": [
     "aoc",
@@ -27,6 +26,7 @@
   "homepage": "https://github.com/MrStanDu33/advent-of-code#readme",
   "devDependencies": {
     "better-docs": "^2.7.2",
+    "clean-jsdoc-theme": "^4.1.9",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
