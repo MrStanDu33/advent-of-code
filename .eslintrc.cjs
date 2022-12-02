@@ -124,6 +124,9 @@ module.exports = {
   },
   ignorePatterns: ['docs', 'node_modules'],
   settings: {
+    'import/resolver': {
+      alias: [['$lib', './lib']],
+    },
     jsdoc: {
       mode: 'typescript',
       tagNamePreference: {
@@ -136,7 +139,7 @@ module.exports = {
   globals: {
     node: true,
   },
-  // parser: '@babel/eslint-parser',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
   },

@@ -12,12 +12,16 @@
     "lint": "./node_modules/.bin/eslint '**/*.js' --ignore-path .gitignore",
     "doc": "jsdoc -c jsdoc.json",
     "make:year": "node ./bin/create-year/index.js",
-    "make:day": "node ./bin/create-day/index.js"
+    "make:day": "node ./bin/create-day/index.js",
+    "test": "node --experimental-vm-modules --experimental-specifier-resolution=node",
+    "preinstall": "link-module-alias clean || echo",
+    "postinstall": "link-module-alias"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/MrStanDu33/advent-of-code.git"
   },
+  "engineStrict": true,
   "author": "DANIELS-ROTH Stan",
   "license": "MIT",
   "bugs": {
@@ -25,12 +29,16 @@
   },
   "homepage": "https://github.com/MrStanDu33/advent-of-code#readme",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "better-docs": "^2.7.2",
     "clean-jsdoc-theme": "^4.1.9",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.3",
     "eslint-plugin-prettier": "^4.2.1",
     "jsdoc": "^3.6.10",
@@ -38,6 +46,10 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
+    "chalk": "^5.1.2",
     "inquirer": "^9.1.2"
+  },
+  "_moduleAliases": {
+    "$lib": "lib"
   }
 }

@@ -5,7 +5,10 @@
     "sourceMap": true,
     "baseUrl": ".",
     "checkJs": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "$lib/*": ["./lib/*"]
+    }
   },
   "exclude": ["node_modules"]
 }
