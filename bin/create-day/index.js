@@ -1,6 +1,12 @@
+/**
+ * @file Create day command configuration.
+ * @author DANIELS-ROTH Stan <contact@daniels-roth-stan.fr>
+ */
+
 import { mkdir, writeFile } from 'node:fs/promises';
 import { existsSync } from 'fs';
 import inquirer from 'inquirer';
+import Logger from '$lib/Logger';
 
 const README_CONTENT = `\
 # Day \${day}: \${challengeName}
@@ -27,12 +33,27 @@ CONTENT_OF_CHALLENGE_BONUS
 </details>
 `;
 
+/**
+ * @description We ask the user the year he wants to create the folder for,
+ * then we check wether the needed folder exist or not. If not, we ask user if
+ * he wants to create it.
+ *
+ * @returns { Promise<string> } Year in which to create the day folder.
+ */
 const promptForParentFolder = async () => {
   const { year } = await inquirer.prompt([
     {
       type: 'input',
       name: 'year',
       message: 'What year you want to create the folder for ?',
+
+      /**
+       * @description Validates user input to ensure he provide a valid year.
+       *
+       * @param   { string }         input - Year given by the user.
+       *
+       * @returns { string|boolean }       Error message or true if given year is valid.
+       */
       validate(input) {
         const thisYear = new Date().getFullYear();
         const givenYear = Number(input);
@@ -63,12 +84,27 @@ const promptForParentFolder = async () => {
   return year;
 };
 
+/**
+ * @description We ask the user the day number he wants to create the folder for.
+ *
+ * @param   { string }          year - The year within the day folder should be created.
+ *
+ * @returns { Promise<string> }      Day number to create.
+ */
 const promptForDay = async (year) => {
   const { day } = await inquirer.prompt([
     {
       type: 'input',
       name: 'day',
       message: 'What day you want to create the folder for ?',
+
+      /**
+       * @description Validates user input to ensure he provide a valid day number.
+       *
+       * @param   { string }         input - Day given by the user.
+       *
+       * @returns { string|boolean }       Error message or true if given day is valid.
+       */
       validate(input) {
         const givenDay = Number(input);
         if (Number.isNaN(givenDay)) {
@@ -86,21 +122,19 @@ const promptForDay = async (year) => {
   return day;
 };
 
-const promptForChallengeData = async () => {
-  const { title } = await inquirer.prompt([
-    {
-      type: 'input',
-      name: 'title',
-      message: 'What is the name of the challenge ?',
-    },
-  ]);
-  return { title };
-};
-
-const createDefaultFiles = async (year, day, challengeData) => {
-  const filledReadmeContent = README_CONTENT.replaceAll(`\${day}`, day)
-    .replaceAll(`\${year}`, year)
-    .replaceAll(`\${challengeName}`, challengeData.name);
+/**
+ * @description We populate created folder with base files.
+ *
+ * @param   { string }        year - Year we created the folder for.
+ * @param   { string }        day  - Day number we created the folder for.
+ *
+ * @returns { Promise<void> }
+ */
+const createDefaultFiles = async (year, day) => {
+  const filledReadmeContent = README_CONTENT.replaceAll(
+    `\${day}`,
+    day,
+  ).replaceAll(`\${year}`, year);
   await writeFile(`./${year}/${day}/README.md`, filledReadmeContent).catch(
     (err) => {
       throw Error('Unable to create README file.', err);
@@ -116,18 +150,23 @@ const createDefaultFiles = async (year, day, challengeData) => {
   });
 };
 
+/**
+ * @description We ask the user the year and day number he wants to create the folder for,
+ * then we create the requested folder.
+ *
+ * @returns { Promise<void> }
+ */
 async function main() {
   try {
     const year = await promptForParentFolder();
     const day = await promptForDay(year);
-    const challengeData = await promptForChallengeData();
-    await createDefaultFiles(year, day, challengeData);
+    await createDefaultFiles(year, day);
 
-    console.log(`Created folder for day ${day} of ${year}`);
+    Logger.info(`Created folder for day ${day} of ${year}`);
 
     process.exit(0);
   } catch (err) {
-    console.error(`Unable to create asked folder`, err.message);
+    Logger.error(`Unable to create asked folder`, err.message);
     process.exit(1);
   }
 }

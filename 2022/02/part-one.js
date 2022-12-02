@@ -7,6 +7,12 @@ import getInput from '$lib/InputManager';
 import Logger from '$lib/Logger';
 import Round from './Classes/Round';
 
+/**
+ * @description We get the input, format it, create a list of rounds
+ * and gets our score based on the given strategy.
+ *
+ * @returns { Promise<void> }
+ */
 const main = async () => {
   Logger.info('Start running 2022 / 02 - part one test');
 
