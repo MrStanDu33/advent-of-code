@@ -9,7 +9,7 @@ import { formatInput } from './global';
 import Elf from './Classes/Elf';
 
 const main = async () => {
-  Logger.info('Start running 2022 / 01 - part one test');
+  Logger.info('Start running 2022 / 01 - part two test');
   const input = await getInput('2022', '01');
   const formattedInput = formatInput(input);
 
