@@ -6,14 +6,12 @@
 /**
  * @class
  * @description Elf manager class.
- *
- * @exports Elf
  */
-export default class Elf {
+class Elf {
   /**
    * @description Initializes a new Elf instance and stores the elf's inventory.
    *
-   * @param { object }   data        - Elf data.
+   * @param { object}    data        - Elf data.
    * @param { string[] } data.snacks - List of all elf's snacks calories.
    */
   constructor({ snacks }) {
@@ -29,3 +27,5 @@ export default class Elf {
     return this.snacks.reduce((sum, snack) => sum + Number(snack), 0);
   }
 }
+
+export default Elf;

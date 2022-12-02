@@ -6,12 +6,10 @@
 /**
  * @class
  * @description Round manager class.
- *
- * @exports Round
  */
 class Round {
   /**
-   * @description Initializes a new Round instance and stores the round's informations.
+   * @description Initializes a new Round instance and stores the round's information.
    *
    * @param { object } data                - Round data.
    * @param { string } data.opponentChoice - Character describing opponent choice.
