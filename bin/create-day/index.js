@@ -101,16 +101,18 @@ const createDefaultFiles = async (year, day, challengeData) => {
   const filledReadmeContent = README_CONTENT.replaceAll(`\${day}`, day)
     .replaceAll(`\${year}`, year)
     .replaceAll(`\${challengeName}`, challengeData.name);
-  await writeFile(`./${year}/${day}/README.md`, filledReadmeContent).catch((err) => {
-    throw ('Unable to create README file.', err);
-  });
+  await writeFile(`./${year}/${day}/README.md`, filledReadmeContent).catch(
+    (err) => {
+      throw Error('Unable to create README file.', err);
+    },
+  );
 
   await writeFile(`./${year}/${day}/input.txt`, '').catch((err) => {
-    throw ('Unable to create input file.', err);
+    throw Error('Unable to create input file.', err);
   });
 
   await writeFile(`./${year}/${day}/part-one.js`, '').catch((err) => {
-    throw ('Unable to create part one file.', err);
+    throw Error('Unable to create part one file.', err);
   });
 };
 
