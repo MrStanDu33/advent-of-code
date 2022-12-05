@@ -16,8 +16,7 @@ class Round {
    * @param { string } data.indicator      - Character indicating wether the game
    *                                       should be lost, won or be draw if indicatorType is set to `OUTCOME` or
    *                                       indicates what we should play against the opponent.
-   * @param { string } data.indicatorType  - String that describes how to handle
-   *                                       indicator value.
+   * @param { string } data.indicatorType  - String that describes how to handle indicator value.
    */
   constructor({ opponentChoice, indicator, indicatorType }) {
     this.opponentChoice = opponentChoice;
