@@ -11,8 +11,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint '**/*.js' --ignore-path .gitignore",
     "doc": "jsdoc -c jsdoc.json",
-    "make:year": "node ./bin/create-year/index.js",
-    "make:day": "node ./bin/create-day/index.js",
+    "make:year": "node --experimental-vm-modules --experimental-specifier-resolution=node ./bin/create-year/index.js",
+    "make:day": "node --experimental-vm-modules --experimental-specifier-resolution=node ./bin/create-day/index.js",
     "test": "node --experimental-vm-modules --experimental-specifier-resolution=node",
     "preinstall": "link-module-alias clean || echo",
     "postinstall": "link-module-alias"
