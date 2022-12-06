@@ -11,7 +11,7 @@ class Rucksack {
   /**
    * @description Initializes a new Rucksack instance and stores the rucksack's inventory.
    *
-   * @param { object } data             - Round data.
+   * @param { object } data             - Rucksack data.
    * @param { Array }  data.inventories - List of all inventories of rucksack.
    */
   constructor({ inventories }) {
