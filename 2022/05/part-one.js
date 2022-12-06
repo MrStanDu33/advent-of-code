@@ -8,7 +8,7 @@ import Logger from '$lib/Logger';
 import Warehouse from './Classes/Warehouse';
 
 /**
- * @description We get the input, format it extract the warehouse default status and
+ * @description We get the input, format it, extract the warehouse default status and
  * instructions, then we instantiate the warehouse based on extracted data and execute
  * instructions.
  *
@@ -17,7 +17,7 @@ import Warehouse from './Classes/Warehouse';
 const main = async () => {
   Logger.info('Start running 2022 / 05 - part one test');
 
-  const input = await getInput('2022', '05');
+  const input = await getInput({ year: '2022', day: '05', separator: '\n' });
 
   const inputSeparator = input.indexOf('');
   const [rawWarehouse, instructions] = [

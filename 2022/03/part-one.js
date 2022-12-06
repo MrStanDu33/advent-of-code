@@ -16,7 +16,7 @@ import Rucksack from './Classes/Rucksack';
 const main = async () => {
   Logger.info('Start running 2022 / 03 - part one test');
 
-  const input = await getInput('2022', '03');
+  const input = await getInput({ year: '2022', day: '03', separator: '\n' });
 
   const rucksacks = input.map(
     (rucksack) =>

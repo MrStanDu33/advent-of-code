@@ -16,7 +16,7 @@ import Pair from './Classes/Pair';
 const main = async () => {
   Logger.info('Start running 2022 / 04 - part two test');
 
-  const input = await getInput('2022', '04');
+  const input = await getInput({ year: '2022', day: '04', separator: '\n' });
 
   const formattedInput = input.map((inputPair) =>
     inputPair.split(',').map((zones) => zones.split('-').map(Number)),

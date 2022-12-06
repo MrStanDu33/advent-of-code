@@ -17,7 +17,7 @@ import Elf from './Classes/Elf';
  */
 const main = async () => {
   Logger.info('Start running 2022 / 01 - part two test');
-  const input = await getInput('2022', '01');
+  const input = await getInput({ year: '2022', day: '01', separator: '\n' });
   const formattedInput = formatInput(input);
 
   const elvesList = formattedInput.map((elf) => new Elf({ snacks: elf }));

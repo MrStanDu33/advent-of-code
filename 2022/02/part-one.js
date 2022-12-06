@@ -16,7 +16,7 @@ import Round from './Classes/Round';
 const main = async () => {
   Logger.info('Start running 2022 / 02 - part one test');
 
-  const input = await getInput('2022', '02');
+  const input = await getInput({ year: '2022', day: '02', separator: '\n' });
   const rounds = input.map((pair) => {
     const [opponentChoice, indicator] = pair.split(' ');
     return new Round({ opponentChoice, indicator, indicatorType: 'MOVE' });
