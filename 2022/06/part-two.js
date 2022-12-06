@@ -7,8 +7,8 @@ import getInput from '$lib/InputManager';
 import Logger from '$lib/Logger';
 
 /**
- * @description We get the input, format it and locate where do first 4 character are unique
- * and returns the index of the letter that follows the sequence of first 4 unique characters.
+ * @description We get the input, format it and locate where do first 14 character are unique
+ * and returns the index of the letter that follows the sequence of first 14 unique characters.
  *
  * @returns { Promise<void> }
  */
@@ -20,8 +20,8 @@ const main = async () => {
   const startOfDataStream =
     input.findIndex(
       (character, index) =>
-        [...new Set(input.slice(index, index + 4))].length === 4,
-    ) + 4;
+        [...new Set(input.slice(index, index + 14))].length === 14,
+    ) + 14;
 
   Logger.info(`ANSWER: ${startOfDataStream}`);
 };
