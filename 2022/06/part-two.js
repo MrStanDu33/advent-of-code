@@ -1,5 +1,5 @@
 /**
- * @file 2022 - 06 - Part one.
+ * @file 2022 - 06 - Part two.
  * @author DANIELS-ROTH Stan <contact@daniels-roth-stan.fr>
  */
 
@@ -13,7 +13,7 @@ import Logger from '$lib/Logger';
  * @returns { Promise<void> }
  */
 const main = async () => {
-  Logger.info('Start running 2022 / 06 - part one test');
+  Logger.info('Start running 2022 / 06 - part two test');
 
   const input = await getInput({ year: '2022', day: '06', separator: '' });
 
