@@ -5,9 +5,11 @@
 
 import getInput from '$lib/InputManager';
 import Logger from '$lib/Logger';
+import Pair from './Classes/Pair';
 
 /**
- * @description We get the input, format it, and ???
+ * @description We get the input, format it, and gets all pairs of elves, then we
+ * get all pairs of elves having common zones to work on and count them.
  *
  * @returns { Promise<void> }
  */
@@ -16,22 +18,13 @@ const main = async () => {
 
   const input = await getInput('2022', '04');
 
-  const formattedInput = input.map((inputPair) => {
-    const pair = inputPair.split(',');
-    const rawFirstZone = pair[0].split('-');
-    const rawSecondZone = pair[1].split('-');
-    const firstZone = [Number(rawFirstZone[0]), Number(rawFirstZone[1])];
-    const secondZone = [Number(rawSecondZone[0]), Number(rawSecondZone[1])];
-    return [firstZone, secondZone];
-  });
+  const formattedInput = input.map((inputPair) =>
+    inputPair.split(',').map((zones) => zones.split('-').map(Number)),
+  );
 
-  const overlappingZones = formattedInput.filter(([firstZone, secondZone]) => {
-    if (firstZone[0] <= secondZone[0] && firstZone[1] >= secondZone[1])
-      return true;
-    if (firstZone[0] >= secondZone[0] && firstZone[1] <= secondZone[1])
-      return true;
-    return false;
-  });
+  const overlappingZones = formattedInput
+    .map((zones) => new Pair({ zones }))
+    .filter((pair) => pair.overlaps.includes);
 
   Logger.info(`ANSWER: ${overlappingZones.length}`);
 };

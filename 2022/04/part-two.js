@@ -5,9 +5,11 @@
 
 import getInput from '$lib/InputManager';
 import Logger from '$lib/Logger';
+import Pair from './Classes/Pair';
 
 /**
- * @description We get the input, format it, and ???
+ * @description We get the input, format it, and gets all pairs of elves, then we
+ * get all pairs of elves having common zones or colliding zones to work on and count them.
  *
  * @returns { Promise<void> }
  */
@@ -16,31 +18,13 @@ const main = async () => {
 
   const input = await getInput('2022', '04');
 
-  const formattedInput = input.map((inputPair) => {
-    const pair = inputPair.split(',');
-    const rawFirstZone = pair[0].split('-');
-    const rawSecondZone = pair[1].split('-');
-    const firstZone = [Number(rawFirstZone[0]), Number(rawFirstZone[1])];
-    const secondZone = [Number(rawSecondZone[0]), Number(rawSecondZone[1])];
-    return [firstZone, secondZone];
-  });
+  const formattedInput = input.map((inputPair) =>
+    inputPair.split(',').map((zones) => zones.split('-').map(Number)),
+  );
 
   const overlappingZones = formattedInput
-    .map(([firstZone, secondZone]) => {
-      const min1 = firstZone[0];
-      const max1 = firstZone[1];
-      const min2 = secondZone[0];
-      const max2 = secondZone[1];
-      if (min1 <= min2 && max2 <= max1) return true;
-      if (min2 <= min1 && max1 <= max2) return true;
-      if (min2 >= min1 && min2 <= max1) return true;
-      if (max2 >= min1 && max2 <= max1) return true;
-      if (min1 >= min2 && min1 <= max2) return true;
-      if (max1 >= min2 && max1 <= max2) return true;
-
-      return false;
-    })
-    .filter((el) => el);
+    .map((zones) => new Pair({ zones }))
+    .filter((pair) => pair.overlaps.includes || pair.overlaps.touching);
 
   Logger.info(`ANSWER: ${overlappingZones.length}`);
 };
