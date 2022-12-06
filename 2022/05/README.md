@@ -134,8 +134,8 @@ Before the rearrangement process finishes, update your simulation so that the El
     There you will find all answers to the challenge for this day. For better experience, I decided to hide any values by putting them in a collapse.
   </summary>
 
-| Introduction | Bonus part |
-| ------------ | ---------- |
-| `TBVFVDZPN`  | `ANSWER`   |
+| Introduction | Bonus part  |
+| ------------ | ----------- |
+| `TBVFVDZPN`  | `VLCWHTDSZ` |
 
 </details>

@@ -72,6 +72,6 @@ In how many assignment pairs do the ranges overlap?
 
 | Introduction | Bonus part |
 | ------------ | ---------- |
-| `ANSWER`     | `ANSWER`   |
+| `530`        | `903`      |
 
 </details>

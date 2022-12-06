@@ -45,6 +45,6 @@ CONTENT_OF_CHALLENGE_BONUS
 
 | Introduction | Bonus part |
 | ------------ | ---------- |
-| `ANSWER`     | `ANSWER`   |
+| `10718`      | `14652`    |
 
 </details>
