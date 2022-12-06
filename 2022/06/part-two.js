@@ -19,7 +19,7 @@ const main = async () => {
 
   const startOfDataStream =
     input.findIndex(
-      (character, index) =>
+      (_character, index) =>
         [...new Set(input.slice(index, index + 14))].length === 14,
     ) + 14;
 
