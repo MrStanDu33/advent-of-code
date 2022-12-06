@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 /**
  * @file 2022 - 05 - Part two.
  * @author DANIELS-ROTH Stan <contact@daniels-roth-stan.fr>
