@@ -1,4 +1,4 @@
-# Day 05: ${challengeName}
+# Day 05: Supply Stacks
 
 ## Introduction
 

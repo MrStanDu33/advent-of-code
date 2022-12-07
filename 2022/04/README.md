@@ -1,4 +1,4 @@
-# Day 04: ${challengeName}
+# Day 04: Camp Cleanup
 
 ## Introduction
 

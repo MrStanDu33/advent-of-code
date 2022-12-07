@@ -1,4 +1,4 @@
-# Day 03: ${challengeName}
+# Day 03: Rucksack Reorganization
 
 ## Introduction
 

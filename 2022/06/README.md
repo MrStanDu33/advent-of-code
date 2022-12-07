@@ -1,4 +1,4 @@
-# Day 06: ${challengeName}
+# Day 06: Tuning Trouble
 
 ## Introduction
 
