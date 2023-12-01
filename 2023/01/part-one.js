@@ -6,6 +6,8 @@
 import getInput from '$lib/InputManager';
 import Logger from '$lib/Logger';
 
+const FIRST_DIGIT_REGEX = /([0-9])/;
+
 /**
  * @description We get the input, format it and get the first and last digit
  * present inside each input values. Then, we concat those digits to get the
@@ -17,15 +19,14 @@ import Logger from '$lib/Logger';
 const main = async () => {
   Logger.info('Start running 2023 / 01 - part one test');
   const input = await getInput({ year: '2023', day: '01', separator: '\n' });
-  const firstDigitRegex = /([0-9])/;
 
   const sumOfCalibrationValues = input.reduce((acc, value) => {
-    const firstDigit = value.match(firstDigitRegex)[0];
+    const firstDigit = value.match(FIRST_DIGIT_REGEX)[0];
     const lastDigit = value
       .split('')
       .reverse()
       .join('')
-      .match(firstDigitRegex)[0];
+      .match(FIRST_DIGIT_REGEX)[0];
 
     const calibrationValue = firstDigit + lastDigit;
     return acc + parseInt(calibrationValue, 10);
