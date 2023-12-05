@@ -48,13 +48,8 @@ What is the sum of all of the calibration values?
 
 ## Solutions
 
-<details>
-  <summary>
-    There you will find all answers to the challenge for this day. For better experience, I decided to hide any values by putting them in a collapse.
-  </summary>
+There you will find all answers to the challenge for this day with given dataset. Please mind that datasets are unique, and thus those answers will not work for you
 
 | Introduction | Bonus part |
 | ------------ | ---------- |
 | `54239`      | `55343`    |
-
-</details>
