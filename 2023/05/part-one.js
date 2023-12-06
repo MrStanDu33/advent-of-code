@@ -82,7 +82,6 @@ const main = async () => {
   const lowestSeedLocation = Math.min(
     ...mappedSeedsData.map((seed) => seed.location),
   );
-  // Logger.info('input:', mappedSeedsData);
 
   Logger.info(`ANSWER: ${lowestSeedLocation}`);
 };
