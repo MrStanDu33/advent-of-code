@@ -8,6 +8,9 @@
     "adventofcode",
     "puzzles"
   ],
+  "engines": {
+    "node": ">= 18.0.0"
+  },
   "scripts": {
     "lint": "./node_modules/.bin/eslint '**/*.js' --ignore-path .gitignore",
     "doc": "jsdoc -c jsdoc.json",
