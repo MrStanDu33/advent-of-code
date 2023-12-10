@@ -3,8 +3,6 @@
  * @author DANIELS-ROTH Stan <contact@daniels-roth-stan.fr>
  */
 
-import Logger from '$lib/Logger';
-
 /**
  * @class
  * @description History manager class.
